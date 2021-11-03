@@ -1,0 +1,802 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("./Tw Cen MT.ttf");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;300;400;500;700&family=Poppins:wght@100;300;400;500;700&family=Raleway:wght@100;300;400;500;700;900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Tw Cen Mt";
+  src: url("../fonts/Tw Cen MT.ttf");
+}
+
+@font-face {
+  font-family: "Hastron";
+  src: url("../fonts/Hastron FREE.ttf");
+}
+
+button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* NAVIGATION */
+nav {
+  z-index: 5;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  background-color: #121212;
+  margin: 10px auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Tw Cen Mt", "Montserrat";
+  padding: auto 5%;
+}
+
+nav div,
+nav ul {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-pages {
+  margin-left: 5%;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-pages a {
+  margin-right: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+}
+
+.btn {
+  position: relative;
+  -webkit-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  -webkit-transition: inherit;
+  transition: inherit;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: #14213d;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  z-index: 4;
+}
+
+.btn:hover:before {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.btn:hover:after {
+  background: #fff;
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+  z-index: -1;
+}
+
+.from-top:before,
+.from-top:after {
+  left: 0;
+  height: 0;
+  width: 100%;
+}
+
+.from-top:before {
+  bottom: 0;
+  border: 1px solid #fff;
+  border-top: 0;
+  border-bottom: 0;
+  z-index: 2;
+}
+
+.from-top:after {
+  top: 0;
+  height: 0;
+}
+
+.from-top:hover:before,
+.from-top:hover:after {
+  height: 100%;
+}
+
+.search-bar {
+  width: 20%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: -1px 4px 15px rgba(255, 255, 255, 0.03);
+          box-shadow: -1px 4px 15px rgba(255, 255, 255, 0.03);
+  border-radius: 5px;
+  padding-left: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#search {
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  font-family: "Tw Cen Mt";
+  font-size: 18px;
+  width: 100%;
+  outline: none;
+  caret-color: #fff;
+  color: #fff;
+  font-family: "Poppins";
+}
+
+.authenticate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 5%;
+}
+
+.authenticate a {
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.authenticate a button {
+  width: 140px;
+  height: 35px;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 5px 10px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#game-button,
+#book-button {
+  background: #f2bd14;
+  color: #fff;
+  font-family: "Raleway";
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+#book-button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: transparent;
+  color: #f2bd14;
+}
+
+#book-button:hover {
+  text-decoration: underline;
+  -webkit-transition: linear;
+  transition: linear;
+}
+
+/* //NAVIGATION OVER */
+/* FOOTER */
+footer {
+  width: 90%;
+  height: auto;
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer hr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: #f2bd14;
+}
+
+.footer-info {
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-info .footer-text {
+  width: 50%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Tw Cen Mt";
+  font-size: 16px;
+}
+
+.footer-info .footer-text p {
+  margin-left: 5px;
+}
+
+.footer-info .footer-text p span {
+  color: #f2bd14;
+}
+
+.footer-info .footer-text p a {
+  color: #aaaaaa;
+}
+
+.footer-info .socials a {
+  margin-left: 15px;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f2bd14;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #121212;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f2bd14;
+  outline: 1px solid slategrey;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  width: 10px;
+}
+
+body {
+  font-family: "Raleway";
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* SLIDES */
+#landing {
+  margin-top: 230px;
+  margin-bottom: 230px;
+}
+
+.video-container {
+  height: 500px;
+  width: 500px;
+  overflow: hidden;
+  position: relative;
+  -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
+          clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.video-container .caption {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  color: #dc0000;
+  padding: 10px;
+}
+
+#vid-2,
+#vid-4 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* //Slides */
+.title {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  font-size: 180px;
+  font-family: "Hastron";
+  text-align: center;
+  color: #ff54b6;
+  text-shadow: 1px 1px 10px #d60179;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.genre-panel {
+  margin-top: 100px;
+  width: 10%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 30px;
+  border-right: 1px solid rgba(114, 112, 105, 0.25);
+  padding-right: 120px;
+}
+
+.genre-panel h3 {
+  font-family: Raleway;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: 0.15em;
+  text-align: left;
+}
+
+.genre-panel hr {
+  width: 50px;
+  height: 5px;
+  background-color: #f2bd14;
+  margin-left: 0;
+  border: none;
+}
+
+.genre-item {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+  padding: 5px 25px 5px 5px;
+  -webkit-transition: background linear;
+  transition: background linear;
+  cursor: pointer;
+}
+
+.genre-item img {
+  margin-right: 30px;
+}
+
+.genre-item p {
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  color: #727069;
+}
+
+.genre-item:hover {
+  background-color: rgba(255, 213, 44, 0.2);
+  border-radius: 5px;
+}
+
+.selected {
+  background-color: rgba(255, 213, 44, 0.2);
+  border-radius: 5px;
+}
+
+.games-panel {
+  width: 70%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 25px;
+}
+
+#games-heading {
+  margin-top: 0px;
+  padding-top: 0;
+  font-size: 70px;
+  font-weight: 900;
+  /* @include textColor();
+  background-image: $gradient; */
+  color: #f2bd14;
+  margin-bottom: 30px;
+}
+
+.games-list {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-y: scroll;
+}
+
+.game {
+  width: 22%;
+  height: auto;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.game img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.game .game-name-box {
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #926b00;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.game .game-name-box p {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Poppins";
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  margin: 12px auto;
+}
+
+.games-list::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f2bd14;
+}
+
+.games-list::-webkit-scrollbar-track {
+  background-color: #f2bd14;
+}
+
+.games-list::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  outline: 1px solid slategrey;
+}
+
+.games-list::-webkit-scrollbar-thumb:hover {
+  width: 10px;
+}
+
+.game:hover {
+  overflow: hidden;
+}
+
+.game:hover img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.7s cubic-bezier(0, 0.55, 0.5, 1);
+  transition: all 0.7s cubic-bezier(0, 0.55, 0.5, 1);
+}
+/*# sourceMappingURL=style.css.map */

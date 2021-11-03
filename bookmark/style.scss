@@ -1,0 +1,110 @@
+@import "../scss/reset";
+@import "../scss/variable";
+@import "../scss/starter";
+
+body {
+  background-color: #121212;
+  color: #fff;
+  @include flexCenter();
+  overflow-x: hidden;
+}
+nav {
+  position: static;
+}
+h1 {
+  text-align: left;
+  margin-left: 5%;
+  margin-right: auto;
+  font-size: 80px;
+  font-family: font(heading);
+  color: #f2bd14;
+  font-weight: 900;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+footer {
+  display: none;
+}
+
+#nothing {
+  /*   position: absolute;
+  top: 20vh;
+  left: 20vw; */
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+}
+
+.games-list {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.game {
+  width: 16%;
+  height: auto;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  z-index: 0;
+  @include flexCenter(column, flex-start, flex-start);
+  img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .game-name-box {
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    @include flexCenter(row, flex-start, flex-start);
+    background-color: #926b00;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    p {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: font(text);
+      font-size: 16px;
+      color: #fff;
+      text-align: left;
+      margin: 12px auto;
+    }
+  }
+}
+
+.games-list::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f2bd14;
+}
+
+.games-list::-webkit-scrollbar-track {
+  background-color: #f2bd14;
+}
+
+.games-list::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  outline: 1px solid slategrey;
+}
+.games-list::-webkit-scrollbar-thumb:hover {
+  width: 10px;
+}
+.game:hover {
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: all 0.7s cubic-bezier(0, 0.55, 0.5, 1);
+  }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Mania</title>
+    <link rel="stylesheet" href="./glide/glide.core.css">
+    <link rel="stylesheet" href="./glide/glide.theme.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fonts.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <nav>
+            <ul class="nav-pages">
+                <a href="./index.html"><img src="./images/Logo.png" alt="Logo"></a>
+            </ul>
+        <div class="search-bar">
+            <label for="search"><img src="./images/search.png" alt="Search-icon"></label>
+            <input type="text" placeholder="Search" id="search"> 
+        </div>
+        <div class="authenticate">
+            <a href="https://keshraf.github.io/Cyber-Arcade/"><button id="game-button">GAMES</button></a>
+            <a href="./bookmark/index.html"><button id="book-button">BOOKMARK</button></a>
+        </div>
+    </nav>
+    <section id="landing">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                    <div class="video-container" id="vid-1">
+                        <video autoplay muted loop>
+                          <source src="./video/reddeadvid.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                </li>
+                <li class="glide__slide">
+                    <div class="video-container" id="vid-2">
+                        <video autoplay muted loop>
+                          <source src="./video/destinyvid.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                </li>
+                <li class="glide__slide">
+                    <div class="video-container" id="vid-3">
+                        <video autoplay muted loop>
+                          <source src="./video/lastofusvid3 ‐ Made with Clipchamp.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                </li>
+                <li class="glide__slide">
+                    <div class="video-container" id="vid-4">
+                        <video autoplay muted loop>
+                          <source src="./video/gowvid.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                </li>
+                <li class="glide__slide">
+                    <div class="video-container" id="vid-3">
+                        <video autoplay muted loop>
+                          <source src="./video/nfsvid.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                </li>
+                <li class="glide__slide">
+                    <div class="video-container" id="vid-4">
+                        <video autoplay muted loop>
+                          <source src="./video/cyberpunkvid ‐ Made with Clipchamp.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </section>
+    <img class="title" src="./images/Title.png">
+    <main>
+        <section class="genre-panel">
+            <h3>Genres</h3>
+            <hr>
+            <div class="genre-item" id="28">
+                <img src="./images/action.png" alt="Action">
+                <p>Action</p>
+            </div>
+            <div class="genre-item" id="12">
+                <img src="./images/adventure.png" alt="Adventure">
+                <p>Adventure</p>
+            </div>
+            <div class="genre-item" id="16">
+                <img src="./images/animation.png" alt="Animation">
+                <p>Animation</p>
+            </div>
+            <div class="genre-item" id="80">
+                <img src="./images/comedy.png" alt="Comedy">
+                <p>COMEDY</p>
+            </div>
+            <div class="genre-item" id="27">
+                <img src="./images/horror.png" alt="HORROR">
+                <p>HORROR</p>
+            </div>
+            <div class="genre-item" id="10749">
+                <img src="./images/romance.png" alt="ROMANCE">
+                <p>ROMANCE</p>
+            </div>
+            <div class="genre-item" id="878">
+                <img src="./images/science.png" alt="Science Fiction">
+                <p>SCI - FI</p>
+            </div>
+        </section>
+        <section class="games-panel">
+            <h2 id="games-heading">TITLES</h2>
+            <div class="games-list">             
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <div class="footer-info">
+            <div class="footer-text">
+                <img src="./images/Copyright.png" alt="Copyright">
+                <p><span>2021 Movie Mania, Inc.</span> | <a href="https://github.com/Keshraf" target="_blank">Deployed with GitHub</a> | <a href="https://www.figma.com/file/BGTZoGylCqq9FoBxo6u0qp/Movies-Catalog" target="_blank">Designed in Figma</a></p>
+            </div>
+            
+            <div class="socials">
+                <a href="https://www.facebook.com/" target="_blank"><img src="./images/facebook.png" alt="facebook"></a>
+                <a href="https://twitter.com/" target="_blank"><img src="./images/twitter.png" alt="twitter"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="./images/instagram.png" alt="instagram"></a>
+                
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="app.js"></script>
+
+      <script>
+          const config = {
+              type: 'carousel',
+              gap:-1000,
+              autoplay:true,
+              perView: 3,
+              animationDuration:2000
+          }
+        new Glide('.glide',config).mount()
+      </script>
+</body>
+</html>
