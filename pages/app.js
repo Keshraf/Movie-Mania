@@ -64,11 +64,13 @@ const hello = async () =>{
     }
 
     let chosenShows = window.sessionStorage.getItem('bookmark');
-    let showsArray = chosenShows.split(',');
-    for(let x = 0;x<showsArray.length;x++){
+    if(chosenShows !== null){
+        let showsArray = chosenShows.split(',');
+        for(let x = 0;x<showsArray.length;x++){
         if(showsArray[x]===game){
             bookmark.setAttribute('src','../images/bookmark-filled.png');
         }
+    }
     }
 
     bookmark.addEventListener('click',() => {
