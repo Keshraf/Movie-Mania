@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./fonts.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 </head>
 <body>
@@ -23,7 +25,6 @@
             <input type="text" placeholder="Search" id="search"> 
         </div>
         <div class="authenticate">
-            <a href="https://keshraf.github.io/Cyber-Arcade/"><button id="game-button">GAMES</button></a>
             <a href="./bookmark/index.html"><button id="book-button">BOOKMARK</button></a>
         </div>
     </nav>
@@ -78,6 +79,11 @@
           </div>
     </section>
     <img class="title" src="./images/Title.png">
+    <img src="./images/collage.jpg" alt="Collage" id="collage">
+    <img src="./images/collage2.jpg" alt="Collage" id="collage2">
+    <div class="overlay">
+        <img src="./images/cross.png" alt="" id="cross">
+    </div>
     <main>
         <section class="genre-panel">
             <h3>Genres</h3>
@@ -136,6 +142,11 @@
         </div>
     </footer>
     
+    <div class="up-button">
+        <a href="#games-heading"><span class="material-icons" id="arrow">
+            menu
+            </span></a>
+    </div>
 
 
 
@@ -144,14 +155,7 @@
     <script src="app.js"></script>
 
       <script>
-          const config = {
-              type: 'carousel',
-              gap:-1000,
-              autoplay:true,
-              perView: 3,
-              animationDuration:2000
-          }
-        new Glide('.glide',config).mount()
+          
       </script>
 </body>
 </html>

@@ -28,9 +28,6 @@ footer {
 }
 
 #nothing {
-  /*   position: absolute;
-  top: 20vh;
-  left: 20vw; */
   width: 100%;
   height: auto;
   opacity: 0.3;
@@ -49,7 +46,7 @@ footer {
 }
 
 .game {
-  width: 16%;
+  width: 20%;
   height: auto;
   margin-right: 40px;
   margin-bottom: 40px;
@@ -80,6 +77,9 @@ footer {
       color: #fff;
       text-align: left;
       margin: 12px auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
@@ -106,5 +106,44 @@ footer {
     object-fit: cover;
     transform: scale(1.1);
     transition: all 0.7s cubic-bezier(0, 0.55, 0.5, 1);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .game {
+    width: 25%;
+  }
+  h1 {
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .games-list {
+    margin-left: 3%;
+  }
+  .game {
+    width: 29%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 44px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .game {
+    width: 40%;
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .game {
+    width: 60%;
+    margin-left: 100px;
+    margin-right: 0;
   }
 }

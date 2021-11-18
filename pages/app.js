@@ -1,5 +1,3 @@
-const slidesContainer = document.querySelector("#slides-container");
-const slidesImg = document.querySelectorAll(".slide-img");
 
 
 
@@ -72,6 +70,7 @@ const hello = async () =>{
         }
     }
     }
+    
 
     bookmark.addEventListener('click',() => {
 
@@ -81,14 +80,8 @@ const hello = async () =>{
             bookmark.setAttribute('src','../images/bookmark (1) 1.png');
         }
 
-        /* bookmark.setAttribute('src','../images/bookmark-filled.png');
-        bookmark.addEventListener('mouseout',() =>{
-            bookmark.setAttribute('src','../images/bookmark-filled.png');
-        }) */
-
         let words = ""; // Stores the each id by
         let word = []; // Stores all the ids
-        let n = 0;
         let i = 0;
         let test = window.sessionStorage.getItem('bookmark');
         if(test === null || test === ''){
@@ -96,15 +89,6 @@ const hello = async () =>{
         }
         else{
             word = test.split(',');
-            /* for(let x = 0; x<test.length;x++){
-                if(test[x]===","){
-                    word.push(words);
-                    words = "";
-                    continue;
-                }
-                words = words + test[x];
-            } */
-            /* console.log("Words",words); */
             console.log("Word",word);//"550988","438631",
             for(let x = 0;x<word.length;x++){
                 if(word[x] === game){
@@ -121,19 +105,6 @@ const hello = async () =>{
             } else{
                 window.sessionStorage.setItem('bookmark',`${words}`);
             }
-/*             console.log(n);
-            if(i === 0){
-                window.sessionStorage.setItem('bookmark',`${test},${game}`)
-            } else{
-                words = "";
-                for(let x = 0;x<word.length;x++){
-                    if(n === x){
-                        continue;
-                    }
-                    words = words + `${word[x]},`;
-                }
-                window.sessionStorage.setItem('bookmark',`${words}`)
-            } */
         }
         console.log(window.sessionStorage.getItem('bookmark'));
     })

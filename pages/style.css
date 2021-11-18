@@ -221,73 +221,7 @@ nav ul {
 
 .nav-pages a {
   margin-right: 20px;
-  font-size: 14px;
-  letter-spacing: 2px;
   padding: 5px 10px;
-}
-
-.btn {
-  position: relative;
-  -webkit-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.btn:before,
-.btn:after {
-  content: "";
-  position: absolute;
-  -webkit-transition: inherit;
-  transition: inherit;
-  z-index: -1;
-}
-
-.btn:hover {
-  color: #14213d;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-  z-index: 4;
-}
-
-.btn:hover:before {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
-
-.btn:hover:after {
-  background: #fff;
-  -webkit-transition-delay: 0.35s;
-          transition-delay: 0.35s;
-  z-index: -1;
-}
-
-.from-top:before,
-.from-top:after {
-  left: 0;
-  height: 0;
-  width: 100%;
-}
-
-.from-top:before {
-  bottom: 0;
-  border: 1px solid #fff;
-  border-top: 0;
-  border-bottom: 0;
-  z-index: 2;
-}
-
-.from-top:after {
-  top: 0;
-  height: 0;
-}
-
-.from-top:hover:before,
-.from-top:hover:after {
-  height: 100%;
 }
 
 .search-bar {
@@ -360,16 +294,10 @@ nav ul {
   cursor: pointer;
 }
 
-#game-button,
 #book-button {
-  background: #f2bd14;
-  color: #fff;
   font-family: "Raleway";
   font-weight: 700;
   letter-spacing: 2px;
-}
-
-#book-button {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: transparent;
@@ -378,8 +306,6 @@ nav ul {
 
 #book-button:hover {
   text-decoration: underline;
-  -webkit-transition: linear;
-  transition: linear;
 }
 
 /* //NAVIGATION OVER */
@@ -485,6 +411,22 @@ body::-webkit-scrollbar-thumb:hover {
   width: 10px;
 }
 
+@media screen and (max-width: 700px) {
+  .nav-pages a img {
+    width: 100%;
+    height: auto;
+  }
+  .search-bar {
+    padding-left: 10px;
+  }
+  .search-bar label img {
+    display: none;
+  }
+  .footer-text p a {
+    display: none;
+  }
+}
+
 body {
   background-color: #121212;
   color: #fff;
@@ -525,10 +467,6 @@ h1 {
   font-weight: 900;
   margin-top: 40px;
   margin-bottom: 30px;
-}
-
-.glide {
-  margin-bottom: 35px;
 }
 
 main {
@@ -706,6 +644,9 @@ h3 {
   color: #fff;
   text-align: left;
   margin: 12px auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .h2-main {
@@ -764,5 +705,68 @@ h3 {
   height: auto;
   cursor: pointer;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1500px) {
+  main,
+  .games-list,
+  #hr-main,
+  .h2-main,
+  #bg-img {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  main,
+  .games-list,
+  #hr-main,
+  .h2-main,
+  #bg-img {
+    width: 75%;
+  }
+  h1 {
+    font-size: 42px;
+    margin: 40px 15px 30px 15px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  main p {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #bg-img {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    z-index: -1;
+    opacity: 0.5;
+  }
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main img {
+    margin-bottom: 20px;
+  }
+  .rating-bar {
+    margin-bottom: 10px;
+  }
+  .info-container .info-box {
+    width: 100%;
+  }
+  .game .game-name-box p {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

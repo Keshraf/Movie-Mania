@@ -221,73 +221,7 @@ nav ul {
 
 .nav-pages a {
   margin-right: 20px;
-  font-size: 14px;
-  letter-spacing: 2px;
   padding: 5px 10px;
-}
-
-.btn {
-  position: relative;
-  -webkit-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.btn:before,
-.btn:after {
-  content: "";
-  position: absolute;
-  -webkit-transition: inherit;
-  transition: inherit;
-  z-index: -1;
-}
-
-.btn:hover {
-  color: #14213d;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-  z-index: 4;
-}
-
-.btn:hover:before {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
-
-.btn:hover:after {
-  background: #fff;
-  -webkit-transition-delay: 0.35s;
-          transition-delay: 0.35s;
-  z-index: -1;
-}
-
-.from-top:before,
-.from-top:after {
-  left: 0;
-  height: 0;
-  width: 100%;
-}
-
-.from-top:before {
-  bottom: 0;
-  border: 1px solid #fff;
-  border-top: 0;
-  border-bottom: 0;
-  z-index: 2;
-}
-
-.from-top:after {
-  top: 0;
-  height: 0;
-}
-
-.from-top:hover:before,
-.from-top:hover:after {
-  height: 100%;
 }
 
 .search-bar {
@@ -360,16 +294,10 @@ nav ul {
   cursor: pointer;
 }
 
-#game-button,
 #book-button {
-  background: #f2bd14;
-  color: #fff;
   font-family: "Raleway";
   font-weight: 700;
   letter-spacing: 2px;
-}
-
-#book-button {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: transparent;
@@ -378,8 +306,6 @@ nav ul {
 
 #book-button:hover {
   text-decoration: underline;
-  -webkit-transition: linear;
-  transition: linear;
 }
 
 /* //NAVIGATION OVER */
@@ -485,6 +411,22 @@ body::-webkit-scrollbar-thumb:hover {
   width: 10px;
 }
 
+@media screen and (max-width: 700px) {
+  .nav-pages a img {
+    width: 100%;
+    height: auto;
+  }
+  .search-bar {
+    padding-left: 10px;
+  }
+  .search-bar label img {
+    display: none;
+  }
+  .footer-text p a {
+    display: none;
+  }
+}
+
 body {
   font-family: "Raleway";
   width: 100%;
@@ -498,6 +440,7 @@ body {
           flex-direction: column;
   background-color: #121212;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* SLIDES */
@@ -544,11 +487,6 @@ body {
   position: absolute;
   top: 40%;
   left: 30%;
-  font-size: 180px;
-  font-family: "Hastron";
-  text-align: center;
-  color: #ff54b6;
-  text-shadow: 1px 1px 10px #d60179;
 }
 
 main {
@@ -798,5 +736,166 @@ main {
           transform: scale(1.1);
   -webkit-transition: all 0.7s cubic-bezier(0, 0.55, 0.5, 1);
   transition: all 0.7s cubic-bezier(0, 0.55, 0.5, 1);
+}
+
+#collage,
+#collage2 {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #121212;
+  display: none;
+  z-index: 8;
+}
+
+.overlay img {
+  cursor: pointer;
+  position: fixed;
+  width: 5%;
+  height: auto;
+  top: 5%;
+  right: 5%;
+  z-index: 9;
+}
+
+#arrow {
+  position: fixed;
+  right: 70px;
+  top: 120px;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 36px;
+  -webkit-box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.25);
+  color: #926b00;
+  z-index: 4;
+  display: none;
+}
+
+@media screen and (max-width: 1900px) {
+  .games-list {
+    height: 80vh;
+  }
+  .game {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .game .game-name-box p {
+    font-size: 12px;
+  }
+  .genre-item p {
+    font-size: 20px;
+  }
+  .genre-panel {
+    width: 12%;
+    margin-left: 25px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .genre-item img {
+    margin-right: 15px;
+  }
+  .game {
+    width: 26%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .genre-item img {
+    margin-right: 10px;
+    width: 50%;
+    height: auto;
+  }
+  #landing {
+    visibility: hidden;
+  }
+  .title {
+    left: 15%;
+    width: 70%;
+    height: auto;
+  }
+  #collage {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -3;
+    opacity: 0.3;
+    top: 25%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .game {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .genre-panel {
+    display: none;
+    position: fixed;
+    top: 2%;
+    z-index: 10;
+    width: 40%;
+    background-color: #121212;
+    padding: auto;
+    border: none;
+  }
+  .genre-panel .genre-item img {
+    width: 25%;
+    height: auto;
+  }
+  .genre-panel .genre-item p {
+    font-size: 26px;
+    margin-left: 15px;
+  }
+  /* .overlay {
+    display: block;
+  } */
+  #arrow {
+    display: block;
+  }
+  .games-panel {
+    width: 90%;
+  }
+  .game {
+    width: 42%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .game {
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+  #collage {
+    display: none;
+  }
+  #collage2 {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -3;
+    opacity: 0.3;
+    top: 15%;
+  }
+  #landing {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .game {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

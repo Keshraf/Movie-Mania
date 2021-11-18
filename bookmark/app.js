@@ -12,12 +12,10 @@ if(shows !== null || shows !== ''){
 const hello = async () =>{
     for(let x = 0; x < showsArray.length; x++){
         if(showsArray[x]===''||showsArray[x]===null){
-            console.log("INSIDE IF");
             continue;
         }
         console.log(showsArray[x]);
         try {
-            console.log("INTRY");
             fetch = await axios.get(`https://api.themoviedb.org/3/movie/${showsArray[x]}?api_key=3f2593c34bce745e1a5e4a7481f4dbba&language=en-US`);
             
         } catch (error) {
@@ -31,9 +29,6 @@ const createList = (result) =>{
         let obj = result;
         let name = obj.title;
         let media = obj.media_type
-        /* if(obj.genres.length==0||obj.rating==0){
-            continue;
-        } */
         if(name === undefined){
             name = obj.name;
         }

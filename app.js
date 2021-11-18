@@ -1,3 +1,48 @@
+const config = {
+    type: 'carousel',
+    gap:-1000,
+    autoplay:true,
+    perView: 3,
+    animationDuration:2000
+}
+new Glide('.glide',config).mount()
+
+function reportWindowSize() {
+    let width = window.innerWidth;
+    console.log("WIDTH:",width)
+    if(width <= 1600){
+        let mount = {gap:-900};
+        new Glide('.glide',mount).mount()
+        console.log("TRIGGRED 1600");
+    }
+  }
+window.onresize = reportWindowSize;
+
+/* MENU BUTTON */
+const genrePanel = document.querySelector('.genre-panel');
+const overlay = document.querySelector('.overlay');
+const cross = document.querySelector('#cross');
+const scrollButton = document.querySelector(".up-button");
+scrollButton.style.visibility = "hidden";
+const viewHeight = window.innerHeight;
+const scrollCheck = window.addEventListener('scroll', function(){
+    let scrollPosition = window.scrollY;
+    if(scrollPosition<(viewHeight/2)){
+        scrollButton.style.visibility = "hidden";
+    }
+    else{
+        scrollButton.style.visibility = "visible";
+    }
+})
+scrollButton.addEventListener('click', () =>{
+    genrePanel.style.display = 'block';
+    overlay.style.display = 'block';
+})
+cross.addEventListener('click',()=>{
+    genrePanel.style.display = 'none';
+    overlay.style.display = 'none';
+})
+
 let listContainer = document.querySelector(".games-list");
 let list =[];
 let urlOrigin = "https://api.themoviedb.org/3/movie/popular?api_key=3f2593c34bce745e1a5e4a7481f4dbba&language=en-US&page=1";
@@ -14,9 +59,6 @@ let gamesPanel = document.querySelector(".games-panel");
 
 const hello = async (url) =>{
     const fetch = await axios.get(url);
-
-    //console.log(fetch.data.results);
-    //console.log(fetch);
     k++;
     next = `https://api.themoviedb.org/3/movie/popular?api_key=3f2593c34bce745e1a5e4a7481f4dbba&language=en-US&page=${k}`;
     createList(fetch.data.results);
@@ -36,9 +78,6 @@ const createList = (result) =>{
         let obj = result[i];
         let name = obj.title;
         let media = obj.media_type
-        /* if(obj.genres.length==0||obj.rating==0){
-            continue;
-        } */
         if(name === undefined){
             name = obj.name;
         }
@@ -97,7 +136,11 @@ for(let i=0;i<7;i++){
     genreList[i].addEventListener('click', () =>{
         genreList[i].classList.add("selected");
         reset();
-        let urlGenre = `https://api.themoviedb.org/3/discover/movie?api_key=3f2593c34bce745e1a5e4a7481f4dbba&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_genres=${genreList[i].id}&with_watch_monetization_types=flatrate`
+        let urlGenre = `https://api.themoviedb.org/3/discover/movie?api_key=3f2593c34bce745e1a5e4a7481f4dbba&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_genres=${genreList[i].id}&with_watch_monetization_types=flatrate`;
+        if(window.innerWidth < 700){
+            genrePanel.style.display = 'none';
+            overlay.style.display = 'none';
+        }
 
         hello(urlGenre);
 
